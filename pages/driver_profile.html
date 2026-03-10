@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideDo | Driver Profile</title>
+  <link rel="stylesheet" href="../css/driver_profile.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="left">
+    <img src="../assets/logo.png" class="logo">
+    <span class="brand">RideDo</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="./driver_dashboard.html">Dashboard</a>
+    <a href="./driver_bookings.html">My Bookings</a>
+    <a href="./driver_profile.html" class="active">My Profile</a>
+    <a href="../index.html" class="logout">Logout</a>
+  </nav>
+</header>
+
+<section class="profile-section">
+  <div class="profile-card">
+
+    <h2>Driver Profile</h2>
+    <p class="subtitle">View and update your details</p>
+
+    <div class="image-box">
+      <img src="../assets/sample cartoon img.jpg" alt="Driver Photo">
+      <input type="file" accept="image/*">
+    </div>
+
+    <form>
+
+      <label>Full Name</label>
+      <input type="text" placeholder="Enter full name" required>
+
+      <label>Email</label>
+      <input type="email" placeholder="Enter email" required>
+
+      <label>Phone Number</label>
+      <input type="tel"
+             pattern="[0-9]{10}"
+             maxlength="10"
+             placeholder="10-digit mobile number"
+             required>
+
+      <label>Driving License Number</label>
+      <input type="text" placeholder="DL Number" required>
+
+      <label>Experience (Years)</label>
+      <input type="number" min="0" placeholder="Eg: 5" required>
+
+      <label>Driver Type</label>
+      <select required>
+        <option value="">Select</option>
+        <option value="cab">Cab Driver</option>
+        <option value="hire">Hire Driver</option>
+      </select>
+
+      <button type="submit" class="btn">
+        Update Profile
+      </button>
+
+    </form>
+
+  </div>
+</section>
+
+</body>
+</html>

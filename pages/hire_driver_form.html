@@ -1,0 +1,78 @@
+a<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hire Driver | RideDo</title>
+  <link rel="stylesheet" href="../css/hire_driver_form.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="left">
+    <img src="../assets/logo.png" class="logo">
+    <span class="brand">RideDo</span>
+  </div>
+  <nav class="nav-links">
+    <a href="../landingpage.html">Home</a>
+    <a href="./bookcab.html">Book Cab</a>
+    <a href="./driverlist.html" class="active">Hire Driver</a>
+    <a href="./rent_car.html">Self Drive Car</a>
+    <a href="./rent_bike.html">Rental Bike</a>
+    <a href="./user_profile.html">My Profile</a>
+    <a href="../index.html" class="logout">Logout</a>
+  </nav>
+</header>
+
+<section class="form-section">
+  <div class="form-card">
+    <h2>Driver Booking Details</h2>
+    <p class="subtitle">Fill the details to continue</p>
+
+    <form id="hiringForm">
+
+      <div class="form-group">
+        <label>Pickup Location</label>
+        <input type="text" id="pickup" placeholder="Enter pickup location" required>
+      </div>
+
+      <div class="form-group">
+        <label>Destination</label>
+        <input type="text" id="destination" placeholder="Enter Drop location" required>
+      </div>
+
+      <div class="form-group">
+        <label>Date</label>
+        <input type="date" id="date" required>
+      </div>
+
+      <div class="form-group">
+        <label>Time</label>
+        <input type="time" id="time" required>
+      </div>
+
+      <div class="form-group">
+        <label>Duration (Hours)</label>
+        <input type="number" id="duration" min="1" placeholder="Eg: 10" required>
+      </div>
+
+      <div class="form-group">
+        <label>Contact Number</label>
+        <input type="tel" id="phone" placeholder="Enter mobile number" required
+          pattern="[0-9]{10}"
+          maxlength="10">
+      </div>
+
+      <button type="submit" class="confirm-btn">
+        Confirm Booking
+      </button>
+
+    </form>
+  </div>
+</section>
+
+<script src="../JS/api.js"></script>
+<script src="../JS/hiring.js"></script>
+
+</body>
+</html>

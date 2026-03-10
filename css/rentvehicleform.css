@@ -1,0 +1,167 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  margin-right: 8px;
+}
+
+.brand {
+  font-size: 38px;
+  font-weight: 700;
+  color: #4b47ff;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  margin-left: 2rem;
+  font-weight: 500;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #4b47ff;
+}
+
+.logout {
+  color: red;
+}
+
+/* Section Center */
+.rent-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+/* Card */
+.rent-container {
+  width: 400px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Icon */
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  background: #edeaff;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle img {
+  width: 70px;
+  height: 70px;
+}
+
+/* Headings */
+.rent-container h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* Form */
+form {
+  text-align: left;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 12px;
+  display: block;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus {
+  border-color: #4b47ff;
+}
+
+/* Date Time Row */
+.date-time {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.date-time div {
+  flex: 1;
+}
+
+/* Button */
+.confirm-btn {
+  width: 100%;
+  background: #6a4cff;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.confirm-btn:hover {
+  background: #5538d2;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .rent-container {
+    width: 90%;
+  }
+}

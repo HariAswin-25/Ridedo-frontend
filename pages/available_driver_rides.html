@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideDo | Available Rides</title>
+  <link rel="stylesheet" href="../css/driver_bookings.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="left">
+    <img src="../assets/logo.png" class="logo">
+    <span class="brand">RideDo</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="driver_dashboard.html">Dashboard</a>
+    <a href="available_driver_rides.html" class="active">Available Rides</a>
+    <a href="driver_bookings.html">My Bookings</a>
+    <a href="../index.html" class="logout">Logout</a>
+  </nav>
+</header>
+
+<section class="booking-section">
+  <h2>Available Hire-Driver Requests</h2>
+  <p class="subtitle">Choose a ride to accept</p>
+
+  <div class="table-container">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Route</th>
+                <th>Schedule</th>
+                <th>Duration</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="unassignedDriverRidesContainer">
+            <tr><td colspan="5" style="text-align: center;">Loading available rides...</td></tr>
+        </tbody>
+    </table>
+  </div>
+</section>
+
+<script src="../JS/api.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+    const driver_id = localStorage.getItem("driver_id");
+    const container = document.getElementById("unassignedDriverRidesContainer");
+
+    async function fetchUnassigned() {
+        try {
+            const response = await fetch(`${window.API_BASE_URL}/driver-bookings/unassigned`);
+            const requests = await response.json();
+
+            if (requests.length === 0) {
+                container.innerHTML = "<p>No available rides right now.</p>";
+                return;
+            }
+
+            container.innerHTML = requests.map(req => `
+                <tr>
+                    <td>#${req.id}</td>
+                    <td><strong>${req.pickup_location}</strong> ➔ ${req.drop_location}</td>
+                    <td>${req.booking_date} | ${req.booking_time}</td>
+                    <td>${req.duration_hours} hrs</td>
+                    <td>
+                        <button class="btn start" style="padding: 5px 10px; font-size: 0.8rem;" onclick="acceptRide(${req.id})">Accept Ride</button>
+                    </td>
+                </tr>
+            `).join('');
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    window.acceptRide = async function(id) {
+        if (!confirm("Accept this ride?")) return;
+        try {
+            const response = await fetch(`${window.API_BASE_URL}/driver-bookings/${id}/accept?driver_id=${driver_id}`, {
+                method: "PUT"
+            });
+            if (response.ok) {
+                alert("Ride accepted!");
+                fetchUnassigned();
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    fetchUnassigned();
+});
+</script>
+
+</body>
+</html>

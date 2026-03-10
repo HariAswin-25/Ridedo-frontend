@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideDo | Rental Provider Dashboard</title>
+  <link rel="stylesheet" href="../css/rental_provider_dashboard.css">
+    <style>
+      .tab-btn:hover { background: #cbd5e1 !important; color: #334155 !important; }
+      .tab-btn.active:hover { background: #4338ca !important; color: #fff !important; }
+      .list-item:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.3s; }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="left">
+    <img src="../assets/logo.png" class="logo" alt="RideDo">
+    <span class="brand">RideDo</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="rental_provider_dashboard.html" class="active">Dashboard</a>
+    <a href="rental_requests.html">Rent Requests</a>
+    <a href="rental_provider_profile.html">My Profile</a>
+    <a href="../index.html">Logout</a>
+  </nav>
+</header>
+
+<!-- DASHBOARD -->
+<section class="dashboard">
+
+  <h2>Rental Provider Dashboard</h2>
+  <p class="subtitle">Complete your business and vehicle details</p>
+
+  <div class="tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
+    <button class="tab-btn active" id="tabVehicles" style="padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; background: #4f46e5; color: #fff;">Vehicles</button>
+    <button class="tab-btn" id="tabDrivers" style="padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; background: #e2e8f0; color: #64748b;">Drivers</button>
+  </div>
+
+  <!-- VEHICLE SECTION -->
+  <div id="sectionVehicles">
+    <div class="card">
+      <form id="vehicleListingForm">
+        <input type="hidden" id="edit_vehicle_id" value="">
+        <div class="section">
+          <h3 id="formHeading">List Your New Vehicle</h3>
+          <label>Vehicle Name</label>
+          <input type="text" id="vehicle_name" placeholder="Eg: Honda City" required>
+          <label>Vehicle Number</label>
+          <input type="text" id="vehicle_number" placeholder="TN 01 AB 1234" required>
+          <label>Vehicle Type</label>
+          <select id="vehicle_type" required>
+            <option value="car">Car</option>
+            <option value="bike">Bike</option>
+          </select>
+          <label>Fuel Type</label>
+          <input type="text" id="fuel_type" placeholder="Petrol / Diesel / Electric" required>
+          <label>Rent Per Day (₹)</label>
+          <input type="number" id="rent_per_day" placeholder="Eg: 1200" required>
+          <label>Vehicle Profile Image</label>
+          <input type="file" id="vehicle_file" accept="image/*">
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button type="submit" id="submitBtn" class="btn">Post Vehicle</button>
+          <button type="button" id="cancelBtn" class="btn" style="background: #94a3b8; display: none;">Cancel</button>
+        </div>
+      </form>
+    </div>
+    <div class="card">
+      <h3>My Listed Vehicles</h3>
+      <div id="myVehiclesContainer" class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Details</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="vehicleTableBody">
+            <tr><td colspan="4" style="text-align:center;">Loading vehicles...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRIVER SECTION -->
+  <div id="sectionDrivers" style="display: none;">
+    <div class="card">
+      <form id="driverListingForm">
+        <input type="hidden" id="edit_driver_id" value="">
+        <div class="section">
+          <h3 id="driverFormHeading">Add/Register a Driver</h3>
+          <label>Full Name</label>
+          <input type="text" id="driver_name" placeholder="Eg: Ravi Kumar" required>
+          <label>Email Address</label>
+          <input type="email" id="driver_email" placeholder="ravi@example.com" required>
+          <label>Phone Number</label>
+          <input type="tel" id="driver_phone" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit number" required>
+          <label>Password (For Driver Login)</label>
+          <input type="password" id="driver_password" placeholder="Create a password" required>
+          <label>License Number</label>
+          <input type="text" id="driver_license" placeholder="TN 01 2023000..." required>
+          <label>Experience (Years)</label>
+          <input type="number" id="driver_exp" placeholder="Eg: 5" required>
+          <label>Driver Type</label>
+          <select id="driver_type" required>
+            <option value="hire">Monthly Hire Driver</option>
+            <option value="cab">Cab Driver</option>
+          </select>
+          <label>Driver Profile Image</label>
+          <input type="file" id="driver_image" accept="image/*">
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button type="submit" id="submitDriverBtn" class="btn">Register Driver</button>
+          <button type="button" id="cancelDriverBtn" class="btn" style="background: #94a3b8; display: none;">Cancel</button>
+        </div>
+      </form>
+    </div>
+    <div class="card">
+      <h3>My Represented Drivers</h3>
+      <div id="myDriversContainer" class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Photo</th>
+              <th>Driver Info</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="driverTableBody">
+            <tr><td colspan="4" style="text-align:center;">Loading drivers...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script src="../JS/api.js"></script>
+<script src="../JS/rental_dashboard.js"></script>
+
+</body>
+</html>

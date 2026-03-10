@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f6f7fb;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  margin-right: 8px;
+}
+
+.brand {
+  font-size: 38px;
+  font-weight: 700;
+  color: #4b47ff;
+}
+
+/* Section */
+.confirmation-section {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card */
+.confirmation-card {
+  background: #fff;
+  width: 380px;
+  padding: 30px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Check Icon */
+.check-icon {
+  width: 70px;
+  height: 70px;
+  background: #4caf50;
+  color: #fff;
+  font-size: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 15px;
+}
+
+/* Text */
+.confirmation-card h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.message {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Info */
+.info-box {
+  background: #f2f3ff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.info-box p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* Button */
+.home-btn {
+  display: block;
+  text-decoration: none;
+  background: #4b47ff;
+  color: #fff;
+  padding: 12px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.home-btn:hover {
+  background: #3734d4;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .confirmation-card {
+    width: 90%;
+  }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideDo | Rental Provider Sign Up</title>
+  <link rel="stylesheet" href="../css/driver_signup.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="left">
+    <img src="../assets/logo.png" class="logo" alt="RideDo">
+    <span class="brand">RideDo</span>
+  </div>
+</header>
+
+<section class="signup-section">
+  <div class="signup-card">
+
+    <h2>Create Rental Provider Account</h2>
+    <p class="subtitle">Register once, complete details in dashboard</p>
+
+    <form id="driverSignupForm">
+
+      <label>Profile Photo</label>
+      <input type="file" id="driver_photo" accept="image/*">
+
+      <label>Full Name</label>
+      <input type="text" id="full_name" placeholder="Enter full name" required>
+
+      <label>Email</label>
+      <input type="email" id="email" placeholder="Enter email" required>
+
+      <label>Phone Number</label>
+      <input
+        type="tel"
+        id="phone"
+        placeholder="10-digit mobile number"
+        pattern="[0-9]{10}"
+        maxlength="10"
+        required
+      >
+
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Create password" required>
+
+      <div style="margin-top: 15px; padding: 10px; background: #f1f5f9; border-radius: 8px; border: 1px solid #e2e8f0;">
+          <p style="font-size: 13px; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Account Type</p>
+          <p style="font-size: 15px; color: #4f46e5; font-weight: 700;">Rental Provider</p>
+      </div>
+
+      <button type="submit" class="btn">Create Account</button>
+
+      <p class="login-link">
+        Already have an account?
+        <a href="./driver_login.html">Login</a>
+      </p>
+
+    </form>
+
+  </div>
+</section>
+
+<script src="../JS/api.js"></script>
+<script src="../JS/driver_signup.js"></script>
+
+  </div>
+</section>
+
+</body>
+</html>

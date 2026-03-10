@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideDo - Rent a Vehicle</title>
+  <link rel="stylesheet" href="../css/rentvehicleform.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="left">
+    <img src="../assets/logo.png" alt="RideDo Logo" class="logo">
+    <span class="brand">RideDo</span>
+  </div>
+  <nav class="nav-links">
+    <a href="../landingpage.html">Home</a>
+    <a href="./bookcab.html">Book Cab</a>
+    <a href="./driverlist.html">Hire Driver</a>
+    <a href="./rent_car.html">Self Drive Car</a>
+    <a href="./rent_bike.html">Rental Bike</a>
+    <a href="./user_profile.html">My Profile</a>
+    <a href="../index.html" class="logout">Logout</a>
+  </nav>
+</header>
+
+<section class="rent-section">
+  <div class="rent-container">
+
+    <div class="icon-circle">
+      <img src="../assets/keyicon.png" alt="Key Icon">
+    </div>
+
+    <h2>Rent a Vehicle</h2>
+    <p class="subtitle">Choose your pickup location and time</p>
+
+    <form id="rentalForm">
+
+      <label>Pickup Location</label>
+      <input type="text" id="pickup" placeholder="Enter pickup point" required>
+
+      <label>Phone Number</label>
+      <input
+        type="tel"
+        id="phone"
+        placeholder="Enter 10-digit mobile number"
+        pattern="[0-9]{10}"
+        maxlength="10"
+        required
+      >
+
+      <label>Driving License Number</label>
+      <input
+        type="text"
+        id="license"
+        placeholder="Enter license number"
+        required
+      >
+
+      <div class="date-time">
+        <div>
+          <label>Pickup Date</label>
+          <input type="date" id="pickup_date" required>
+        </div>
+        <div>
+          <label>Pickup Time</label>
+          <input type="time" id="pickup_time" required>
+        </div>
+      </div>
+
+      <div class="date-time">
+        <div>
+          <label>Return Date</label>
+          <input type="date" id="return_date" required>
+        </div>
+        <div>
+          <label>Return Time</label>
+          <input type="time" id="return_time" required>
+        </div>
+      </div>
+
+      <button type="submit" class="confirm-btn">
+        Confirm Booking
+      </button>
+
+    </form>
+  </div>
+</section>
+
+<script src="../JS/api.js"></script>
+<script src="../JS/rentals.js"></script>
+
+</body>
+</html>

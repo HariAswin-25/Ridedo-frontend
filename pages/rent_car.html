@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RideDo - Self Driving Cars</title>
+  <link rel="stylesheet" href="../css/rent_vehicle_common.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="left">
+    <img src="../assets/logo.png" class="logo">
+    <span class="brand">RideDo</span>
+  </div>
+  <nav class="nav-links">
+      <a href="../landingpage.html">Home</a>
+      <a href="./bookcab.html" >Book Cab</a>
+      <a href="./driverlist.html" >Hire Driver</a>
+      <a href="./rent_car.html" class="active">Self Drive Car</a>
+      <a href="./rent_bike.html">Rental Bike</a>
+      <a href="./user_profile.html">My Profile</a>
+      <a href="../index.html" class="logout">Logout</a>
+  </nav>
+</header>
+
+<section class="vehicle-section">
+  <h2>Self Driving Cars</h2>
+  <p class="subtitle">Choose a car & drive on your own</p>
+
+    <div id="carListContainer" class="vehicle-container">
+      <p style="text-align: center; color: #94a3b8; font-style: italic;">Loading cars...</p>
+    </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script src="../JS/api.js"></script>
+<script src="../JS/vehicle_list_dynamic.js"></script>
+
+</body>
+</html>

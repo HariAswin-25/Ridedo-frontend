@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driver List | RideDo</title>
+  <link rel="stylesheet" href="../css/driverlist.css">
+</head>
+<body>
+ <header class="navbar">
+    <div class="left">
+      <img src="../assets/logo.png" alt="RideDo Logo" class="logo">
+      <span class="brand">RideDo</span>
+    </div>
+    <nav class="nav-links">
+      <a href="../landingpage.html">Home</a>
+      <a href="./bookcab.html">Book Cab</a>
+      <a href="./driverlist.html" class="active">Hire Driver</a>
+      <a href="./rent_car.html">Self Drive Car</a>
+      <a href="./rent_bike.html">Rental Bike</a>
+      <a href="./user_profile.html">My Profile</a>
+      <a href="../index.html" class="logout">Logout</a>
+    </nav>
+  </header>
+  <section class="driver-section">
+    <h2>Available Drivers</h2>
+    <p>Select from our verified, professional drivers</p>
+    <div id="driverListContainer" class="driver-container">
+      <p style="text-align: center; color: #94a3b8; font-style: italic;">Loading drivers...</p>
+    </div>
+  </section>
+  <script src="../JS/api.js"></script>
+  <script src="../JS/driver_list_dynamic.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideDo - Driver Booking Confirm</title>
+  <link rel="stylesheet" href="../css/hire_driver.css">
+</head>
+<body>
+ <header class="navbar">
+    <div class="left">
+      <img src="../assets/logo.png" alt="RideDo Logo" class="logo">
+      <span class="brand">RideDo</span>
+    </div>
+    <nav class="nav-links">
+      <a href="../landingpage.html">Home</a>
+      <a href="./bookcab.html" >Book Cab</a>
+      <a href="./driverlist.html" class="active">Hire Driver</a>
+      <a href="./rent_car.html">Self Drive Car</a>
+      <a href="./rent_bike.html">Rental Bike</a>
+      <a href="./user_profile.html">My Profile</a>
+      <a href="../index.html" class="logout">Logout</a>
+    </nav>
+  </header>
+  <section class="confirm-section">
+    <div class="confirm-card">
+      <div class="icon success-icon">✔</div>
+      <h2>Driver Booking Confirm</h2>
+      <p class="subtitle">Your booking has been successfully confirmed!</p>
+
+      <div class="booking-details">
+        <h4>Booking Details</h4>
+        <p><strong>Pickup:</strong> <span id="hire_pickup">Loading...</span></p>
+        <p><strong>Date & Time:</strong> <span id="hire_date">Loading...</span></p>
+        <p>⏱ <strong>Duration:</strong> <span id="hire_duration">Loading...</span></p>
+      </div>
+
+      <button onclick="location.href='../landingpage.html'" class="continue-btn" >Great! Continue</button>
+      <p class="footer-text">
+        A confirmation email has been sent to your registered email address.
+      </p>
+    </div>
+  </section>
+
+  <script src="../JS/confirmation.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+}
+
+.brand {
+  font-size: 38px;
+  font-weight: 700;
+  color: #4b47ff;
+}
+
+.nav-links a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #4b47ff;
+}
+
+.logout {
+  color: red;
+}
+
+
+/* Confirmation Section */
+.confirm-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  background-color: #f9f9f9;
+}
+
+.confirm-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem 3rem;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.success-icon {
+  color: white;
+  background-color: #32cd32;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 30px;
+  margin: 0 auto 1rem;
+}
+
+.confirm-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-icon {
+  font-size: 28px;
+  background-color: #00b347;
+  color: white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  margin: 0 auto 1rem;
+}
+
+.booking-details {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.booking-details h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #222;
+}
+
+.booking-details p {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Continue Button */
+.continue-btn {
+  background-color: #00b347;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.continue-btn:hover {
+  background-color: #01943d;
+}
+
+/* Footer Text */
+.footer-text {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 1rem;
+}

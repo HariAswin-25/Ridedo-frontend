@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+}
+
+.brand {
+  font-size: 38px;
+  font-weight: 700;
+  color: #4b47ff;
+}
+
+.nav-links a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #4b47ff;
+}
+
+.logout {
+  color: red;
+}
+
+
+/* Section */
+.vehicle-section {
+  text-align: center;
+  padding: 50px 5%;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 35px;
+}
+
+/* Cards */
+.vehicle-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.vehicle-card {
+  width: 260px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px);
+}
+
+.vehicle-img {
+  width: 130px;
+  margin-bottom: 15px;
+}
+
+.vehicle-card h3 {
+  margin-bottom: 8px;
+}
+
+.vehicle-card p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Button */
+.rent-btn {
+  margin-top: 10px;
+  background: #4b47ff;
+  color: #fff;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.rent-btn:hover {
+  background: #3732d3;
+}
+
+.rent-btn.disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* PUBLIC TABLE STYLES */
+.public-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.public-table th, .public-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.public-table th {
+  background: #f8f9fa;
+  color: #4b47ff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.table-img-rect {
+  width: 80px;
+  height: 50px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #f0f0f0;
+}
+
+.status-available {
+  color: #10b981;
+  background: #ecfdf5;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.rent-btn-small {
+  padding: 8px 18px;
+  font-size: 13px;
+  margin-top: 0;
+  background: #4b47ff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}

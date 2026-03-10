@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f4f6fb;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  margin-right: 8px;
+}
+
+.brand {
+  font-size: 38px;
+  font-weight: 700;
+  color: #4b47ff;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  margin-left: 2rem;
+  font-weight: 500;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #4b47ff;
+}
+
+.logout {
+  color: red;
+}
+
+/* Confirmation Section */
+.confirm-container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-box {
+  background: #fff;
+  width: 450px;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.success-icon {
+  width: 70px;
+  height: 70px;
+  background: #4caf50;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.confirm-box h2 {
+  margin-bottom: 0.3rem;
+}
+
+.confirm-box p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+/* Booking Details */
+.details {
+  text-align: left;
+  background: #f9f9ff;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.details div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.details span {
+  font-weight: 600;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  flex: 1;
+  text-decoration: none;
+  padding: 0.7rem;
+  background: #4b47ff;
+  color: #fff;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.btn:hover {
+  background: #3a38d5;
+}
+
+.secondary {
+  background: #e0e0ff;
+  color: #4b47ff;
+}
+
+.secondary:hover {
+  background: #d0d0ff;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .confirm-box {
+    width: 90%;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

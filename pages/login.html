@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RideDo | Login</title>
+  <link rel="stylesheet" href="../css/login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand">
+      <img src="../assets/logo.png" class="logo" />
+      <span class="brand-name">RideDo</span>
+    </div>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+    </nav>
+  </header>
+  <section class="login-container">
+    <div class="login-box">
+      <h2>Welcome Back to RideDo</h2>
+      <p>Login to continue your journey</p>
+      <form class="booking-form" id="loginForm">
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <div class="forgot">
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <p class="signup-text">
+        Don't have an account? <a href="../pages/signuppg.html">Sign Up</a>
+      </p>
+    </div>
+  </section>
+  <!-- External JS files -->
+  <script src="../JS/api.js"></script>
+  <script src="../JS/login.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px 50px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-right: 820px; 
+}
+
+
+span {
+  color: #4b47ff;
+  position: relative;
+  right: 990px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+nav a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+nav a:hover,
+nav a.active {
+  color: #4b47ff;
+}
+
+/* Login Section */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+  background: #f9f9f9;
+}
+
+.login-box {
+  background: #fff;
+  width: 400px;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.login-box h2 {
+  color: #4b47ff;
+  margin-bottom: 0.3rem;
+  font-size: 1.8rem;
+}
+
+.login-box h2 span {
+  color: #6c63ff;
+}
+
+.login-box p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  margin-top: 0.3rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 4px rgba(108, 99, 255, 0.3);
+}
+
+/* Forgot Password */
+.forgot {
+  text-align:center;
+  margin-top: 0.6rem;
+}
+
+.forgot a {
+  color: #4b47ff;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.forgot a:hover {
+  text-decoration: underline;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  background: #6c63ff;
+  color: #fff;
+  border-radius: 25px;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #574fe3;
+}
+
+/* Bottom Text */
+.signup-text {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.signup-text a {
+  color: #4b47ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-box {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}

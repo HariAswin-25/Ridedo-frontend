@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideDo | Provider Profile</title>
+    <link rel="stylesheet" href="../css/rental_provider_profile.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="left">
+        <img src="../assets/logo.png" class="logo" alt="RideDo">
+        <span class="brand">RideDo</span>
+    </div>
+    <nav class="nav-links">
+        <a href="rental_provider_dashboard.html">Dashboard</a>
+        <a href="rental_requests.html">Rent Requests</a>
+        <a href="rental_provider_profile.html" class="active">My Profile</a>
+        <a href="../index.html">Logout</a>
+    </nav>
+</header>
+
+<section class="profile-header">
+    <div class="header-content">
+        <div class="avatar-circle" id="profileAvatar">RP</div>
+        <div class="header-text">
+            <h1 id="topName">Rental Provider</h1>
+            <p id="topEmail">provider@ridedo.com</p>
+        </div>
+        <button id="editToggleBtn" class="btn-edit">Edit Profile</button>
+    </div>
+</section>
+
+<section class="profile-container">
+    <div class="profile-layout">
+        
+        <!-- Account Details Card -->
+        <div class="profile-card">
+            <div class="card-header">
+                <h2>Account Information</h2>
+            </div>
+            
+            <div id="viewMode" class="info-display">
+                <div class="info-group">
+                    <label>Full Name</label>
+                    <p id="val_name">-</p>
+                </div>
+                <div class="info-group">
+                    <label>Email Address</label>
+                    <p id="val_email">-</p>
+                </div>
+                <div class="info-group">
+                    <label>Phone Number</label>
+                    <p id="val_phone">-</p>
+                </div>
+                <div class="info-group">
+                    <label>Partner Status</label>
+                    <p><span class="badge-status">Verified Partner</span></p>
+                </div>
+            </div>
+
+            <form id="providerProfileForm" class="edit-mode hidden">
+                <div class="info-group">
+                    <label>Full Name</label>
+                    <input type="text" id="edit_full_name" required>
+                </div>
+                <div class="info-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="edit_phone" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-save">Save Changes</button>
+                    <button type="button" id="cancelEditBtn" class="btn-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Inventory Summary Card -->
+        <div class="profile-card">
+            <div class="card-header">
+                <h2>Active Inventory</h2>
+            </div>
+            <p class="summary-text">Summary of your currently listed vehicles.</p>
+
+            <div id="readOnlyListingsContainer" class="summary-list">
+                <p class="loading-text">Loading listings...</p>
+            </div>
+            
+            <div class="card-footer">
+                <a href="rental_provider_dashboard.html" class="link-action">Go to Inventory Manager →</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="../JS/api.js"></script>
+<script src="../JS/rental_provider_profile.js"></script>
+
+</body>
+</html>

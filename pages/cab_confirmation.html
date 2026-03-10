@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RideDo | Booking Confirmed</title>
+  <link rel="stylesheet" href="../css/cab_confirmation.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="left">
+      <img src="../assets/logo.png" alt="RideDo Logo" class="logo">
+      <span class="brand">RideDo</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="../landingpage.html">Home</a>
+      <a href="./bookcab.html" class="active">Book Cab</a>
+      <a href="./driverlist.html">Hire Driver</a>
+      <a href="./rent_car.html">Self Drive Car</a>
+      <a href="./rent_bike.html">Rental Bike</a>
+      <a href="./user_profile.html">My Profile</a>
+      <a href="../index.html" class="logout">Logout</a>
+    </nav>
+  </header>
+
+  <section class="confirm-container">
+    <div class="confirm-box">
+
+      <div class="success-icon">✔</div>
+
+      <h2>Booking Confirmed!</h2>
+      <p>Your cab has been booked successfully</p>
+
+      <div class="details">
+        <div><span>Pickup:</span> <span id="confirm_pickup">Loading...</span></div>
+        <div><span>Destination:</span> <span id="confirm_dest">Loading...</span></div>
+        <div><span>Date:</span> <span id="confirm_date">Loading...</span></div>
+        <div><span>Time:</span> <span id="confirm_time">Loading...</span></div>
+        <div><span>Cab Type:</span> <span id="confirm_cab">Loading...</span></div>
+      </div>
+
+      <div class="actions">
+        <a href="../landingpage.html" class="btn">Go to Home</a>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="../JS/confirmation.js"></script>
+
+</body>
+</html>

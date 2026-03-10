@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideDo | Admin Services</title>
+  <link rel="stylesheet" href="../css/rental_provider_dashboard.css">
+  <style>
+    .admin-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .vehicle-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    .vehicle-table th, .vehicle-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .vehicle-table th {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+    .btn-edit { background: #3498db; color: #fff; }
+    .btn-delete { background: #e74c3c; color: #fff; }
+    .btn-action {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #1a1a2e;
+      padding: 30px;
+      border-radius: 20px;
+      width: 500px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="left">
+    <img src="../assets/logo.png" class="logo" alt="RideDo">
+    <span class="brand">RideDo Admin</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="admin_services.html">Manage Vehicles</a>
+    <a href="../landingpage.html">Home</a>
+    <a href="../index.html">Logout</a>
+  </nav>
+</header>
+
+<section class="admin-container">
+  <h2>Manage Rental Vehicles</h2>
+  <button class="btn" style="width: auto; margin-top: 10px;" onclick="openAddModal()">+ Add New Vehicle</button>
+
+  <table class="vehicle-table">
+    <thead>
+      <tr>
+        <th>Preview</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Number</th>
+        <th>Rent (₹/day)</th>
+        <th>Availability</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="adminVehicleBody">
+      <!-- Dynamic Data -->
+    </tbody>
+  </table>
+</section>
+
+<!-- MODAL FOR ADD/EDIT -->
+<div id="vehicleModal" class="modal">
+  <div class="modal-content">
+    <h3 id="modalTitle">Add Vehicle</h3>
+    <form id="adminVehicleForm">
+      <input type="hidden" id="editVehicleId">
+      
+      <label>Vehicle Name</label>
+      <input type="text" id="admin_v_name" placeholder="Eg: Honda City" required>
+
+      <label>Vehicle Number</label>
+      <input type="text" id="admin_v_number" placeholder="TN 01 AB 1234" required>
+
+      <label>Vehicle Type</label>
+      <select id="admin_v_type" required>
+        <option value="car">Car</option>
+        <option value="bike">Bike</option>
+      </select>
+
+      <label>Fuel Type</label>
+      <input type="text" id="admin_v_fuel" placeholder="Petrol / Electric" required>
+
+      <label>Rent Per Day (₹)</label>
+      <input type="number" id="admin_v_rent" placeholder="Eg: 1200" required>
+
+      <label>Image URL</label>
+      <input type="text" id="admin_v_image" placeholder="http://...">
+
+      <div style="display: flex; gap: 10px; margin-top: 20px;">
+        <button type="submit" class="btn">Save</button>
+        <button type="button" class="btn btn-delete" onclick="closeModal()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../JS/api.js"></script>
+<script src="../JS/admin_services.js"></script>
+
+</body>
+</html>
