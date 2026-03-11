@@ -5,42 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RideDo | Booking Requests</title>
     <link rel="stylesheet" href="../css/rental_provider_dashboard.css">
-    <style>
-        .tabs {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 10px;
-        }
-        .tab-btn {
-            padding: 10px 20px;
-            border: none;
-            background: none;
-            cursor: pointer;
-            font-weight: 600;
-            color: #64748b;
-            border-radius: 8px;
-            transition: 0.2s;
-        }
-        .tab-btn.active {
-            color: #4f46e5;
-            background: #f1f5f9;
-        }
-        .request-section { display: none; }
-        .request-section.active { display: block; }
-
-        .data-table { width: 100%; border-collapse: collapse; margin-top: 15px; background: #fff; border-radius: 12px; overflow: hidden; }
-        .data-table th, .data-table td { padding: 15px; text-align: left; border-bottom: 1px solid #f1f5f9; font-size: 0.9rem; }
-        .data-table th { background: #f8fafc; color: #4b47ff; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; }
-        .request-thumb { width: 50px; height: 35px; border-radius: 4px; object-fit: cover; }
-        .status-tag { padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-        .tag-pending { background: #fffbeb; color: #9a3412; }
-        .tag-confirmed { background: #f0fdf4; color: #166534; }
-        .tag-cancelled { background: #fef2f2; color: #991b1b; }
-        .btn-acc { background: #10b981; color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; }
-        .btn-rej { background: #ef4444; color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; }
-    </style>
+    <link rel="stylesheet" href="../css/rental_req.css">
 </head>
 <body>
 

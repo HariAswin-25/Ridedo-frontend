@@ -29,11 +29,12 @@ body {
 
 
 span {
-  color: #4b47ff;
-  position: relative;
-  right: 990px;
-  font-size: 30px;
-  font-weight: bold;
+    color: #4b47ff;
+    position: relative;
+    right: 820px;
+    bottom: 30px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 nav a {
