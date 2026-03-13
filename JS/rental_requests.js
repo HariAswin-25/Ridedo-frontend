@@ -75,7 +75,22 @@ document.addEventListener("DOMContentLoaded", async function() {
         container.innerHTML = items.map(req => {
             const vData = vMap[req.vehicle_id] || { name: `Vehicle #${req.vehicle_id}` };
             const imgUrl = vData.img || 'https://via.placeholder.com/50x35?text=Ride';
+            const status = (req.status || 'pending').toLowerCase();
             
+            let actionButtons = "";
+            if (status === 'pending') {
+                actionButtons = `
+                    <button onclick="updateRentalStatus(${req.id}, 'accepted')" class="btn-acc">Accept</button>
+                    <button onclick="updateRentalStatus(${req.id}, 'rejected')" class="btn-rej">Reject</button>
+                `;
+            } else if (status === 'accepted' || status === 'confirmed') {
+                actionButtons = `
+                    <button onclick="updateRentalStatus(${req.id}, 'completed')" class="btn-acc" style="background-color: #3b82f6;">Complete</button>
+                `;
+            } else {
+                actionButtons = `<span style="color: #94a3b8; font-size: 0.75rem;">${req.status}</span>`;
+            }
+
             return `
             <tr>
                 <td><img src="${imgUrl}" class="request-thumb" alt="v"></td>
@@ -88,15 +103,10 @@ document.addEventListener("DOMContentLoaded", async function() {
                     <br><span style="font-size: 0.8rem; color: #64748b;">${req.pickup_date}</span>
                 </td>
                 <td>${req.phone_number}</td>
-                <td><span class="status-tag tag-${(req.status || 'pending').toLowerCase()}">${req.status || 'pending'}</span></td>
+                <td><span class="status-tag tag-${status}">${req.status || 'pending'}</span></td>
                 <td>
                     <div class="req-actions">
-                        ${req.status === 'pending' ? `
-                            <button onclick="updateRentalStatus(${req.id}, 'confirmed')" class="btn-acc">Accept</button>
-                            <button onclick="updateRentalStatus(${req.id}, 'cancelled')" class="btn-rej">Reject</button>
-                        ` : `
-                            <span style="color: #94a3b8; font-size: 0.75rem;">Done</span>
-                        `}
+                        ${actionButtons}
                     </div>
                 </td>
             </tr>
@@ -113,7 +123,23 @@ document.addEventListener("DOMContentLoaded", async function() {
         let html = "";
 
         // Render Cab Bookings first
-        html += cabBookings.map(req => `
+        html += cabBookings.map(req => {
+            const status = (req.status || 'pending').toLowerCase();
+            let actionButtons = "";
+            if (status === 'pending') {
+                actionButtons = `
+                    <button onclick="updateCabStatus(${req.id}, 'accepted')" class="btn-acc">Accept</button>
+                    <button onclick="updateCabStatus(${req.id}, 'rejected')" class="btn-rej">Reject</button>
+                `;
+            } else if (status === 'accepted' || status === 'confirmed') {
+                actionButtons = `
+                    <button onclick="updateCabStatus(${req.id}, 'completed')" class="btn-acc" style="background-color: #3b82f6;">Complete</button>
+                `;
+            } else {
+                actionButtons = `<button onclick="deleteCabBooking(${req.id})" class="btn-rej">Remove</button>`;
+            }
+
+            return `
             <tr>
                 <td><strong>Cab Service</strong></td>
                 <td>
@@ -122,15 +148,33 @@ document.addEventListener("DOMContentLoaded", async function() {
                     <br><span style="font-size: 0.75rem; color: #94a3b8;">${req.booking_date} @ ${req.booking_time}</span>
                 </td>
                 <td>-</td>
-                <td><span class="status-tag tag-${(req.status || 'pending').toLowerCase()}">${req.status || 'pending'}</span></td>
+                <td><span class="status-tag tag-${status}">${req.status || 'pending'}</span></td>
                 <td>
-                    <button onclick="deleteCabBooking(${req.id})" class="btn-rej">Remove</button>
+                    <div class="req-actions">
+                        ${actionButtons}
+                    </div>
                 </td>
             </tr>
-        `).join('');
+        `; }).join('');
 
         // Render Driver Hires
-        html += driverHires.map(req => `
+        html += driverHires.map(req => {
+            const status = (req.status || 'pending').toLowerCase();
+            let actionButtons = "";
+            if (status === 'pending') {
+                actionButtons = `
+                    <button onclick="updateDriverStatus(${req.id}, 'accepted')" class="btn-acc">Accept</button>
+                    <button onclick="updateDriverStatus(${req.id}, 'rejected')" class="btn-rej">Reject</button>
+                `;
+            } else if (status === 'accepted' || status === 'confirmed') {
+                actionButtons = `
+                    <button onclick="updateDriverStatus(${req.id}, 'completed')" class="btn-acc" style="background-color: #3b82f6;">Complete</button>
+                `;
+            } else {
+                actionButtons = `<button onclick="deleteDriverBooking(${req.id})" class="btn-rej">Remove</button>`;
+            }
+
+            return `
             <tr>
                 <td><strong>Driver Hire</strong></td>
                 <td>
@@ -139,17 +183,14 @@ document.addEventListener("DOMContentLoaded", async function() {
                     <br><span style="font-size: 0.75rem; color: #94a3b8;">${req.duration_hours} hrs</span>
                 </td>
                 <td>${req.contact_number}</td>
-                <td><span class="status-tag tag-${(req.status || 'pending').toLowerCase()}">${req.status || 'pending'}</span></td>
+                <td><span class="status-tag tag-${status}">${req.status || 'pending'}</span></td>
                 <td>
-                    <div style="display: flex; gap:5px;">
-                        ${(req.status || "").toLowerCase() !== 'confirmed' && (req.status || "").toLowerCase() !== 'accepted' ? `
-                            <button onclick="updateDriverStatus(${req.id}, 'confirmed')" class="btn-acc">Approve</button>
-                        ` : ''}
-                        <button onclick="deleteDriverBooking(${req.id})" class="btn-rej">Del</button>
+                    <div class="req-actions">
+                        ${actionButtons}
                     </div>
                 </td>
             </tr>
-        `).join('');
+        `; }).join('');
 
         container.innerHTML = html;
     }
@@ -177,7 +218,21 @@ document.addEventListener("DOMContentLoaded", async function() {
                 body: JSON.stringify({ status: status })
             });
             if (response.ok) {
-                alert("Driver booking confirmed!");
+                alert(`Driver booking ${status}!`);
+                fetchAllBookingRequests();
+            }
+        } catch (error) { console.error(error); }
+    };
+
+    window.updateCabStatus = async function(id, status) {
+        try {
+            const response = await fetch(`${window.API_BASE_URL}/cab-bookings/${id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ status: status })
+            });
+            if (response.ok) {
+                alert(`Cab booking ${status}!`);
                 fetchAllBookingRequests();
             }
         } catch (error) { console.error(error); }
