@@ -7,7 +7,7 @@
 }
 
 /* Navbar */
-.navbar {
+/* .navbar {
   background: #ffffff;
   padding: 15px 40px;
   display: flex;
@@ -29,6 +29,45 @@
 .brand {
   font-size: 30px;
   font-weight: 700;
+  color: #4b47ff;
+} */
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px 50px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-right: 820px; 
+}
+
+
+span {
+    color: #4b47ff;
+    position: relative;
+    right: 820px;
+    bottom: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+nav a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+nav a:hover,
+nav a.active {
   color: #4b47ff;
 }
 
